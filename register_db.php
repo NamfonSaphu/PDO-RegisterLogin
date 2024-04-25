@@ -7,7 +7,7 @@ if (isset($_POST['register'])) {
     $username = $_POST['username'];
     $email = $_POST['email'];
     $password = $_POST['password'];
-    $confirm_password = $_POST['confirm_password'];
+    $confirmPassword = $_POST['confirm_password'];
 }
 
 if (empty($username)) {
@@ -41,7 +41,7 @@ if (empty($username)) {
     } else if ($userEmailExists) {
         $_SESSION['error'] = "Email already exists";
         header("location: register.php");
-    } else {
+    } else { 
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
         try {
             $stmt = $pdo->prepare("INSERT INTO users(username, email, password) VALUES (?,?,?)");

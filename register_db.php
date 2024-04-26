@@ -24,7 +24,7 @@ if (empty($username)) {
     exit;
 } else if ($password !== $confirmPassword) {
     $_SESSION['error'] = "Your password do not match";
-    header("location: register");
+    header("location: register.php");
     exit;
 } else {
     $checkUsername = $pdo->prepare("SELECT COUNT(*) FROM users WHERE username = ?");

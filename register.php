@@ -62,7 +62,7 @@
                 <label for="floatingPassword">Confirm Password</label>
             </div>
 
-            <button class="btn btn-primary w-100 py-2" type="submit" name="register">Sign Up</button>
+            <button class="btn btn-warning w-100 py-2" type="submit" name="register">Sign Up</button>
             <p class="mt-5 mb-3 text-body-secondary">Already have an account? <a href="login.php">Click Here</a> to login now</p>
         </form>
     </main>

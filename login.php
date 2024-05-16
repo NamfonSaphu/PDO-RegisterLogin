@@ -17,50 +17,41 @@ session_start()
 <body>
 
     <div class="container">
-        <!-- header -->
-        <?php include('nav.php'); ?>
-        <!-- header  end-->
-    </div>
+        <main class="form-signin w-100 m-auto">
+            <form action="login_db.php" method="POST">
+                <img class="mb-4" src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
+                <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
-    <main class="form-signin w-100 m-auto">
-        <form action="login_db.php" method="POST">
-            <img class="mb-4" src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
-            <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+                <?php if (isset($_SESSION['error'])) { ?>
+                    <div class="alert alert-danger" role="alert">
+                        <?php
+                        echo $_SESSION['error'];
+                        unset($_SESSION['error']);
+                        ?>
+                    </div>
+                <?php } ?>
 
-            <?php if (isset($_SESSION['error'])) { ?>
-                <div class="alert alert-danger" role="alert">
-                    <?php
-                    echo $_SESSION['error'];
-                    unset($_SESSION['error']);
-                    ?>
+                <div class="form-floating">
+                    <input type="email" class="form-control my-2" name="email" id="floatingInput" placeholder="name@example.com">
+                    <label for="floatingInput">Email address</label>
                 </div>
-            <?php } ?>
+                <div class="form-floating">
+                    <input type="password" class="form-control my-2" name="password" id="floatingPassword" placeholder="Password">
+                    <label for="floatingPassword">Password</label>
+                </div>
 
-            <div class="form-floating">
-                <input type="email" class="form-control my-2" name="email" id="floatingInput" placeholder="name@example.com">
-                <label for="floatingInput">Email address</label>
-            </div>
-            <div class="form-floating">
-                <input type="password" class="form-control my-2" name="password" id="floatingPassword" placeholder="Password">
-                <label for="floatingPassword">Password</label>
-            </div>
-
-            <div class="form-check text-start my-3">
-                <input class="form-check-input" type="checkbox" value="remember-me" id="flexCheckDefault">
-                <label class="form-check-label" for="flexCheckDefault">
-                    Remember me
-                </label>
-            </div>
-            <button class="btn btn-warning w-100 py-2" type="submit" name="login">Sign in</button>
-            <p class="mt-5 mb-3 text-body-secondary">Don't have an account yet? <a href="register.php">Click Here</a> to register now</p>
-        </form>
-    </main>
-
-    <div class="container">
-        <!-- footer -->
-        <?php include('footer.php'); ?>
-        <!-- footer end-->
+                <div class="form-check text-start my-3">
+                    <input class="form-check-input" type="checkbox" value="remember-me" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Remember me
+                    </label>
+                </div>
+                <button class="btn btn-warning w-100 py-2" type="submit" name="login">Sign in</button>
+                <p class="mt-5 mb-3 text-body-secondary">Create account <a href="register.php">Click Here</a> to register now</p>
+            </form>
+        </main>
     </div>
+
 
     <script src="/docs/5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 

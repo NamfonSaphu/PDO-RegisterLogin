@@ -16,16 +16,10 @@
 
 <body>
 
-    <div class="container">
-        <!-- header -->
-        <?php include('nav.php'); ?>
-        <!-- header  end-->
-    </div>
-
     <main class="form-signin w-100 m-auto">
         <form action="register_db.php" method="POST"> 
             <img class="mb-4" src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
-            <h1 class="h3 mb-3 fw-normal">Sign Up</h1>
+            <h1 class="h3 mb-3 fw-normal">Create account</h1>
 
             <?php if (isset($_SESSION['success'])) { ?>
                 <div class="alert alert-success" role="alert">
@@ -63,7 +57,7 @@
             </div>
 
             <button class="btn btn-warning w-100 py-2" type="submit" name="register">Sign Up</button>
-            <p class="mt-5 mb-3 text-body-secondary">Already have an account? <a href="login.php">Click Here</a> to login now</p>
+            <p class="mt-5 mb-3 text-body-secondary"><a href="login.php">Click Here</a> to login now</p>
         </form>
     </main>
 
